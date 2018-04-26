@@ -1,0 +1,178 @@
+body {
+    height: 100%;
+    position: relative;
+
+    .bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../images/bg.png) no-repeat;
+        background-attachment: fixed;
+    }
+
+    &.dm {
+        font-family: 'Raleway', sans-serif;
+        color: #252525;
+
+        header {
+            margin-top: 4em;
+
+            img {
+                width: 100%;
+
+                @include mq(phablet){
+                    width: auto;
+                }
+            }
+
+            img:nth-child(2){
+                width: 100%;
+
+                @include mq(desktop){
+                    width: auto;
+                }
+            }
+
+            img:first-child {
+                padding-bottom: 1em;
+            };
+
+            img:nth-child(3),
+            img:last-child {
+                padding-top: 1em;
+            };
+        }
+
+        .col-md-offset-4 {
+            background: #faf7d6;
+            padding: 1em;
+            text-align: center;
+            margin-bottom: 3em;
+            max-width: 447px;
+            margin-left: auto;
+            margin-right:  auto;
+            float: none;
+
+            @include mq(tablet){
+                padding: 3em;
+                min-width: 446px;
+            }
+
+            p:first-child {
+                margin-bottom: 1.8em;
+            };
+        }
+
+        @media (min-width: 992px){
+            .col-md-offset-4 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (min-width: 992px){
+            .col-md-4 {
+                width: 31.633333%;
+            }
+        }
+
+        h1 {
+            font-size: linear-interpolation((320px: 26px, 992px: 36px));
+            line-height:normal;
+            margin-bottom: 0.4em;
+
+             @include mq(desktop){
+                font-size: 36px;
+            }
+        }
+
+        h2 {
+            color: #ca4b2d;
+            //font-size: 28px;
+            font-size: linear-interpolation((320px: 18px, 992px: 27px));
+            margin-top: 52px;
+            line-height: 1.4;
+
+            @include mq(desktop){
+                font-size: 28px;
+            }
+        }
+
+        p {
+            font-size: 25px;
+            font-size: linear-interpolation((320px: 15px, 992px: 25px));
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+
+            @include mq(desktop){
+                font-size: 25px;
+            }
+        }
+
+        form * {
+            display: block;
+            margin: 0 auto;
+        }
+
+        form p {
+            font-size: 17.5px;
+            margin-bottom: 0;
+        }
+
+        form a {
+            margin-top: 25px;
+            text-decoration: underline;
+            color: #252525;
+        }
+
+        input[type="submit"],
+        input[type="text"] {
+            width: 64%;
+            padding: 0.7em;
+            text-align: center;
+        }
+
+        input[type="submit"]{
+            background: #289c4f;
+            color: #fff;
+            border: 0;
+            box-shadow: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.85em 0.5em;
+            @include transition(background 0.2s ease-out);
+
+            &:hover {
+                background: darken(#289c4f, 5%);
+            };
+
+            &.inactive {
+                background: #9a9a9a;
+                color: #c7c7c7;
+            }
+        }
+
+        input[type="text"]{
+            border: 2px solid #dadada;
+            margin-bottom: 1em;
+        }
+
+        .booknow {
+            color: #fff;
+            background: #576db0;
+            display: inline-block;
+            padding: 0.5em 1.2em;
+            width: auto;
+            font-size: 25px;
+            margin-top: 1em;
+            @include transition(background);
+
+            &:hover {
+                text-decoration: none;
+                background: darken(#576db0, 10%);
+            };
+        }
+    }
+}
